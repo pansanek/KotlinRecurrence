@@ -2,10 +2,14 @@ package kot
 
 
 fun main(args: Array<String>) {
-    val array = generateSequence("Сотрудник №1"){
-        val index = it.substring(11).toInt()
-        "Сотрудник №${index+1}"
+    val fullNames = mutableListOf<String>()
+    for(i in 0..1000){
+        fullNames.add("Имя $i, Фамилия $i")
     }
-    val listOfFirst100 = array.take(100)
-    for(employee in listOfFirst100) println(employee)
+    val names = fullNames.map{ it.substringBefore(",")}
+    val lastNames= fullNames.map{ it.substringAfter(",")}
+    val users = names.zip(lastNames)
+    for(user in users){
+        println(user.first + user.second)
+    }
 }
