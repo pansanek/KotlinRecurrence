@@ -2,13 +2,11 @@ package kot
 
 
 fun main(args: Array<String>) {
-    val revenueByWeek = listOf(
-        listOf(8,6,5,1,2),
-        listOf(2,4,6,1,3),
-        listOf(7,3,4,2,1),
-        listOf(1,4,5,7,6)
+    val data = mapOf<String,List<Int>>(
+        "file1" to listOf(15,-20,45,12,15),
+        "file2" to listOf(14,51,235,-23,12),
+        "file3" to listOf(18,23,-46,123,12)
     )
-    val total = revenueByWeek.flatten()
-    val average = total.average()
-    println(average)
+    val average = data.filter { it.value.all {it>=0} }.flatMap{it.value}.average()
+
 }
