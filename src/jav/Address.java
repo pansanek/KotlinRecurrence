@@ -1,5 +1,7 @@
 package jav;
 
+import java.util.Objects;
+
 public class Address {
     private String city;
     private String street;
@@ -34,14 +36,33 @@ public class Address {
     public void setNumber(int number) {
         this.number = number;
     }
-
+//    @Override
+//    public boolean equals(Object obj){
+//        if(hashCode() != obj.hashCode()){
+//            return false;
+//        }
+//        if(obj instanceof Address) {
+//            Address address = (Address) obj;
+//            return this.city.equals(address.city) && this.street.equals(address.street) && this.number == address.number;
+//        }
+//        return false;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return city.hashCode() + street.hashCode() +number;
+//    }
 
     @Override
-    public boolean equals(Object obj){
-        if(obj instanceof Address) {
-            Address address = (Address) obj;
-            return this.city.equals(address.city) && this.street.equals(address.street) && this.number == address.number;
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return number == address.number && Objects.equals(city, address.city) && Objects.equals(street, address.street);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, street, number);
     }
 }

@@ -14,5 +14,7 @@ public class Main {
         if(address1.equals(address2)){
             System.out.println("Equal");
         }
+        System.out.println(address1.hashCode());
+        System.out.println(address2.hashCode());
     }
 }
