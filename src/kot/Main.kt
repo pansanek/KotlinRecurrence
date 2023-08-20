@@ -11,12 +11,13 @@ fun main(args: Array<String>) {
 
 
     val sportsman = Sportsman()
-    sportsman.invokeWaterBoy(object :WaterBoy{
-        override fun bringWater() {
-            println("Water")
-        }
-
-    })
+//    sportsman.invokeWaterBoy(object :WaterBoy{
+//        override fun bringWater() {
+//            println("Water")
+//        }
+//
+//    })
+    sportsman.invokeWaterBoy { println("Water") }
 }
 
 
