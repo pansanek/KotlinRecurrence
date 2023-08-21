@@ -2,26 +2,6 @@ package kot
 
 
 fun main(args: Array<String>) {
-//    travel(object :Transport("Bus"){
-//        override fun drive() {
-//            println("Bus is moving")
-//        }
-//
-//    })
-
-
-    val sportsman = Sportsman()
-//    sportsman.invokeWaterBoy(object :WaterBoy{
-//        override fun bringWater() {
-//            println("Water")
-//        }
-//
-//    })
-    sportsman.invokeWaterBoy { println("Water") }
+    println(Calc.square(4))
 }
 
-
-
-fun travel(transport: Transport){
-    transport.drive()
-}
