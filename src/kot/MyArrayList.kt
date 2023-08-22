@@ -45,4 +45,14 @@ class MyArrayList<T>: MyList<T> {
     override fun size(): Int {
         return size
     }
+
+    companion object{
+        fun<E> myListOf(vararg elements: E): MyArrayList<E>{
+            val list  = MyArrayList<E>()
+            for(element in elements){
+                list.add(element)
+            }
+            return list
+        }
+    }
 }
